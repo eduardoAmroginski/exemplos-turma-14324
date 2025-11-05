@@ -1,0 +1,53 @@
+<!-- Declara o tipo do documento como HTML5 -->
+<!DOCTYPE html>
+
+<!-- Define o idioma da página como português do Brasil -->
+<html lang="pt-br">
+
+<head>
+    <!-- Define o conjunto de caracteres usado no documento (UTF-8 permite acentuação corretamente) -->
+    <meta charset="UTF-8">
+
+    <!-- Garante que a página seja exibida corretamente em dispositivos móveis e desktops -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Define o título da página, que aparece na aba do navegador -->
+    <title>Meu Primeiro JS</title>
+</head>
+
+<body>
+
+    <!-- Cria um parágrafo vazio, que será preenchido dinamicamente pelo JavaScript -->
+    <p id="demo"></p>
+
+    <!-- Início do código JavaScript -->
+    <script>
+        // Seleciona o elemento HTML com id="demo" e insere dentro dele o texto "Olá mundo!"
+        // innerHTML permite alterar o conteúdo do elemento diretamente
+        document.getElementById("demo").innerHTML = "Olá mundo!";
+
+        // Exibe uma caixa de diálogo pedindo ao usuário que digite sua idade
+        // O valor retornado é armazenado na variável 'idade' (como string)
+        let idade = prompt("Digite a sua idade: ");
+
+        // Verifica se a idade digitada é maior ou igual a 18
+        if (idade >= 18) {
+            // Se for maior ou igual a 18, mostra a mensagem no console
+            console.log("Você é maior de idade");
+        } else {
+            // Caso contrário, mostra a mensagem informando que é menor de idade
+            console.log("Você é menor de idade");
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+
+Resumo didático:
+- O script interage com o usuário através do prompt(), que coleta dados digitados.
+- O if...else serve para tomar decisões com base na idade informada.
+- O console.log() exibe mensagens no console do navegador (abra com F12 → aba “Console”).
+- O document.getElementById().innerHTML mostra conteúdo diretamente na página. 
+
+-->
