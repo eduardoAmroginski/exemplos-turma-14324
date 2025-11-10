@@ -1,0 +1,17 @@
+@import url("../../components/userCard/userCard.css");
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+h1 { 
+    text-align: center; 
+    color: #333; 
+}
+
+user-card { 
+    display: inline-block; 
+    margin: 10px; 
+}

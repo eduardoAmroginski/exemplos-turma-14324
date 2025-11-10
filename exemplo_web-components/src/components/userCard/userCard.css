@@ -1,0 +1,17 @@
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title { 
+    color: #007bff;
+    font-size: 18px; 
+}
+.text-muted { 
+    color: #888; 
+    font-size: 14px; 
+}
