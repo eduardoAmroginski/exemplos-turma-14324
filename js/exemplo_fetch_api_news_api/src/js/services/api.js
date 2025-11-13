@@ -1,19 +1,41 @@
-const API_KEY = "1a9ec140ecc94bee9c1ab040dee469da"
+// Define a chave da API utilizada para autenticação na NewsAPI.
+// Essa chave identifica o usuário e permite acessar os endpoints da API.
+const API_KEY = "1a9ec140ecc94bee9c1ab040dee469da";
 
-export async function fetchTopHeadlines(){
-    try {
-        const endpoint = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
-        const response = await fetch(endpoint);
+// Declara uma função assíncrona que busca as principais manchetes (top headlines).
+// O uso de "export" permite que essa função seja importada e utilizada em outros arquivos JS.
+export async function fetchTopHeadlines() {
+  try {
+    // Monta a URL do endpoint da NewsAPI, incluindo o país (us = Estados Unidos)
+    // e a chave da API como parâmetro de autenticação.
+    const endpoint = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
 
-        if (!response.ok){
-            throw new Error('Erro na requisição');
-        }
+    // Faz a requisição HTTP utilizando a função fetch(), que retorna uma Promise.
+    // Como a função é assíncrona, usamos "await" para aguardar a resposta.
+    const response = await fetch(endpoint);
 
-        const data = await response.json();
-
-        return data.articles
-
-    } catch (error) {
-        console.log("Não foi possivel carregar as noticia principais");
+    // Verifica se a resposta foi bem-sucedida (status 200–299).
+    // Caso contrário, lança um erro para ser capturado no bloco catch.
+    if (!response.ok) {
+      throw new Error("Erro na requisição");
     }
+
+    // Converte a resposta da API, que vem em formato JSON, para um objeto JavaScript.
+    const data = await response.json();
+
+    // Retorna o array de artigos de notícias contido na resposta.
+    // Cada elemento do array representa uma notícia (título, descrição, fonte, etc).
+    return data.articles;
+  } catch (error) {
+    // Caso ocorra algum erro durante a requisição ou conversão do JSON,
+    // exibe uma mensagem de erro no console.
+    console.log("Não foi possivel carregar as noticia principais");
+  }
 }
+
+// Resumo do funcionamento:
+// - A função monta a URL da API com sua chave e o país desejado.
+// - Faz uma requisição HTTP com fetch().
+// - Se a resposta for válida (response.ok), converte para JSON.
+// - Retorna a lista de artigos (data.articles).
+// - Caso algo dê errado, mostra uma mensagem de erro no console.
