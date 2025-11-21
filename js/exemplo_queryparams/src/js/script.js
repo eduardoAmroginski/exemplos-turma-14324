@@ -2,7 +2,7 @@
 import "../components/cardNews/CardNews.js";
 
 // Importa a função que busca as notícias principais (top headlines) da NewsAPI
-import { fetchTopHeadlines } from "./services/api.js";
+import { fetchSearchEverything, fetchTopHeadlines } from "./services/api.js";
 
 // Quando a página termina de carregar (evento onload do window),
 // a função 'setCardsTopHeadlines' é executada para exibir as notícias.
@@ -18,6 +18,8 @@ const setCardsTopHeadlines = async () => {
 
   // Faz a requisição à API e aguarda o retorno da lista de artigos.
   const articles = await fetchTopHeadlines();
+
+  // const articles = await fetchSearchEverything("tecnologia");
 
   // Percorre cada artigo retornado pela API.
   articles.forEach((article) => {
